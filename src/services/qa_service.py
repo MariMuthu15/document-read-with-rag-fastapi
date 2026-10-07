@@ -1,10 +1,10 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from langchain.chains.combine_documents import (
+from langchain_classic.chains.combine_documents import (
     create_stuff_documents_chain
 )
 
-from langchain.chains.retrieval import (
+from langchain_classic.chains.retrieval import (
     create_retrieval_chain
 )
 

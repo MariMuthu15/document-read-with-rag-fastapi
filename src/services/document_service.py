@@ -21,17 +21,21 @@ async def process_document(file: UploadFile):
         f"{file_id}_{file.filename}"
     )
 
-    # Save uploaded file
     contents = await file.read()
 
     with open(file_path, "wb") as f:
         f.write(contents)
 
-    # Load + split document
     docs = load_document(file_path)
 
-    # Add to FAISS
+    print("STEP 4: Document loaded")
+    print("Number of documents:", len(docs))
+
+    print("STEP 5: Adding documents to FAISS")
+
     add_documents(docs)
+
+    print("STEP 6: Added documents to FAISS")
 
     return {
         "file_id": file_id,

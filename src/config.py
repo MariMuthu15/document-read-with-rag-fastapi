@@ -7,7 +7,8 @@ class Settings(BaseSettings):
     embedding_model: str = "models/gemini-embedding-2"
     llm_model: str = "gemini-2.5-flash"
     faiss_index_path: str = "./faiss_index"
-
+    chunk_size: int = 1000
+    chunk_overlap: int = 200
 
     class Config:
         env_file = ".env"
